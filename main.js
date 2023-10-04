@@ -186,7 +186,7 @@ document.addEventListener('click' , (e) => {
 
                 // update value score in localstorage
                 window.localStorage.setItem('sco'  , res);
-
+                
                 // reload page again
                 window.location.reload();
                 
@@ -214,22 +214,15 @@ document.addEventListener('click' , (e) => {
             // checking if counter = 9
             if(counter === 9){
 
-                
                 // adding class to prevent clicking again
                 lettersContent.classList.add('noClicking');
+
+                // sound of end
+                document.getElementById('hang').play();
 
                
                 // calling function endGame
                 endGame();
-
-
-                   // reloading window after end trial
-                setTimeout(() => {
-
-                  // reload page after 5000 milseconds
-                   window.location.reload();
-
-                   }, 5000);
                
             }
 
@@ -246,10 +239,6 @@ document.addEventListener('click' , (e) => {
 // function defination
 function endGame(){
 
-
-    // adding sound of end
-    document.getElementById('hang').play();
-
     // selecting div game over
     let gameOver = document.querySelector('.game-over');
 
@@ -265,11 +254,17 @@ function endGame(){
     // select score p 
     let scoreResult = document.querySelector('.score');
 
-    // set score p
-    scoreResult.innerHTML  += score;
+        // set score p
+        scoreResult.innerHTML  += score;
 
-    // clear localstorage after getting score
-    window.localStorage.clear();
+        // clear localstorage after getting score
+        window.localStorage.clear();
 
- 
+    // reloading window after end trial
+    setTimeout(() => {
+
+        // reload page after 5000 milseconds
+        window.location.reload();
+
+    }, 5000);
 }
