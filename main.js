@@ -63,7 +63,7 @@ document.querySelector('.game-info .category span').innerHTML = specificProperit
 let lettersOfWord = Array.from(randomValue);
 
 // setting len equal lenth of word
-// let len = lettersOfWord.length;
+let len = lettersOfWord.length;
 
 let lettersGuess = document.querySelector('.letters-guess');
 
@@ -83,7 +83,7 @@ lettersOfWord.forEach(l => {
         emptySpan.classList.add('space');
 
         // decreacing len
-        // --len;
+        --len;
     }
 
     // appending each span into lettersguess
@@ -104,9 +104,6 @@ let counter = 0;
 
 // set score = 0
 let score = 0;
-
-let arr = [];
-
 
 // checking if localstorage containning value of score
 if(window.localStorage.getItem('sco')){
@@ -165,8 +162,7 @@ document.addEventListener('click' , (e) => {
                         status = true;
 
                        // decreacing len minus 1
-                        // --len;
-                        arr.push(letterName)
+                        --len;
 
 
 
@@ -178,10 +174,9 @@ document.addEventListener('click' , (e) => {
 
 
         });
-        console.log(arr)
 
         // checking if len == 0 to stop clicking on letters content
-        if(arr.join('') == randomValue){
+        if(len == 0){
 
                 // adding class unclickable
                 lettersContent.classList.add('noClicking');
