@@ -14,4 +14,11 @@ To understand this game follow this...
 Hangman game had created by javascript
 the game is responsive for (mobiles , pc and laptop)
 To understand more look at these pictures...
-<img src="">
+1- Beggining of game
+<img src="https://github.com/kareemtarekK/Hangman-Game/blob/main/images/1.jpg" width="200" height="300">
+2- enter letters you expected
+<img src="https://github.com/kareemtarekK/Hangman-Game/blob/main/images/2.jpg" width="200" height="300">
+3- if you don`t collect letters and your attempts are more than 9 trails
+<img src="https://github.com/kareemtarekK/Hangman-Game/blob/main/images/4.jpg" width="200" height="300">
+4- if you collect more than words perfectly your score will be calculated
+<img src="https://github.com/kareemtarekK/Hangman-Game/blob/main/images/3.jpg" width="200" height="300">
