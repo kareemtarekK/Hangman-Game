@@ -63,7 +63,7 @@ document.querySelector('.game-info .category span').innerHTML = specificProperit
 let lettersOfWord = Array.from(randomValue);
 
 // setting len equal lenth of word
-let len = lettersOfWord.length;
+// let len = lettersOfWord.length;
 
 let lettersGuess = document.querySelector('.letters-guess');
 
@@ -83,7 +83,7 @@ lettersOfWord.forEach(l => {
         emptySpan.classList.add('space');
 
         // decreacing len
-        --len;
+        // --len;
     }
 
     // appending each span into lettersguess
@@ -104,6 +104,9 @@ let counter = 0;
 
 // set score = 0
 let score = 0;
+
+let arr = [];
+
 
 // checking if localstorage containning value of score
 if(window.localStorage.getItem('sco')){
@@ -162,7 +165,8 @@ document.addEventListener('click' , (e) => {
                         status = true;
 
                        // decreacing len minus 1
-                        --len;
+                        // --len;
+                        arr.push(letterName)
 
 
 
@@ -174,9 +178,10 @@ document.addEventListener('click' , (e) => {
 
 
         });
+        console.log(arr)
 
         // checking if len == 0 to stop clicking on letters content
-        if(len == 0){
+        if(arr.join('') == randomValue){
 
                 // adding class unclickable
                 lettersContent.classList.add('noClicking');
@@ -246,6 +251,10 @@ document.addEventListener('click' , (e) => {
 // function defination
 function endGame(){
 
+
+    // adding sound of end
+    document.getElementById('hang').play();
+
     // selecting div game over
     let gameOver = document.querySelector('.game-over');
 
@@ -261,11 +270,11 @@ function endGame(){
     // select score p 
     let scoreResult = document.querySelector('.score');
 
-        // set score p
-        scoreResult.innerHTML  += score;
+    // set score p
+    scoreResult.innerHTML  += score;
 
-        // clear localstorage after getting score
-        window.localStorage.clear();
+    // clear localstorage after getting score
+    window.localStorage.clear();
 
  
 }
